@@ -17,10 +17,11 @@ public class Virus : MonoBehaviour
         /*      transform.LookAt(new Vector3(0.0f, 1.6f, 0f));
                 rb.velocity = transform.forward * move_speed;*/
     }
-
+     
     // Update is called once per frame
     void Update()
     {
+
         transform.LookAt(new Vector3(0.0f, 1.6f, 0f));
         rb.velocity = transform.forward * move_speed;
     }
