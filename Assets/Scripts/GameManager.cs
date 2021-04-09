@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     }
     void SpawnVirus()
     {
-        print("Virus Spawned");
         int num = Random.Range(0, 4);
 
         if (num == 0)

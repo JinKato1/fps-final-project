@@ -36,13 +36,22 @@ public class Virus : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+/*    void OnCollisionEnter(Collision collision)
     {
+        print("Collision with Player");
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().TakeDamage(damage);
 
+        }
+        Destroy(gameObject);
 
+    }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<Player>().TakeDamage(damage);
         }
         Destroy(gameObject);
 
