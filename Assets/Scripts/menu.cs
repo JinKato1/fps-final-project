@@ -1,21 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class UI : MonoBehaviour
-{ 
-    public static UI instance;
-
-    public Slider health_slider;
-    public Text health_text;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
-
+public class menu : MonoBehaviour
+{
 
     // Start is called before the first frame update
     void Start()
@@ -28,4 +17,15 @@ public class UI : MonoBehaviour
     {
         
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("main");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
