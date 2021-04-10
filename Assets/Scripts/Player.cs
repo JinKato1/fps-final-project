@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
 
     public int damage = 1;
     public int current_health;
+
+    public GameObject pause_screen;
+
     /*
         private void Awake()
         {
@@ -29,11 +32,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!pause_screen.activeInHierarchy)
         {
-            Instantiate(bullet, fire_position.position, fire_position.rotation);
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(bullet, fire_position.position, fire_position.rotation);
+            }
         }
-
     }
 
 
@@ -49,7 +54,5 @@ public class Player : MonoBehaviour
 
         health_bar.value = current_health;
         life_text.text = "Life: " + current_health;          
-
-
     }
 }

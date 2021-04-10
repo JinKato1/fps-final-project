@@ -1,24 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
     public GameObject virus;
     public Vector3 position;
     float timer = 0.0f;
+    static public int score = 10;
+
+    public GameObject pause_screen;
+
+    //scenes
+    public string menu_scene, game_scene;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Invoke("SpawnVirus", 1.0f);
-
+        //hiding the pause screen
+        pause_screen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && !pause_screen.activeInHierarchy)
+        {
+            Pause();
+        }
+
         if(timer <= 1f)
         {
             timer += Time.deltaTime;
@@ -53,7 +66,39 @@ public class GameManager : MonoBehaviour
         }
 
         Instantiate(virus, position, Quaternion.identity);
-        //Rigidbody instance = Instantiate(virus,  );
-        //instance.velocity = Random.insideUnitSphere * 5.0f;
+
+    }
+
+
+    //Functionality for the pause screen 
+
+    public void Pause()
+    {
+        pause_screen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        pause_screen.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(menu_scene);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(game_scene);
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

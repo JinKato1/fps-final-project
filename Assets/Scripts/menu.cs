@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class menu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("Current Score: " + GameManager.score);   
     }
 
     // Update is called once per frame

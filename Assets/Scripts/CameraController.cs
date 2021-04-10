@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
 
     public float mouse_sensitivity = 0.01f;
 
+    public GameObject pause_screen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,11 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        yaw += mouse_sensitivity * Input.GetAxis("Mouse X");
-        pitch -= mouse_sensitivity * Input.GetAxis("Mouse Y");
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        if (!pause_screen.activeInHierarchy)
+        {
+            yaw += mouse_sensitivity * Input.GetAxis("Mouse X");
+            pitch -= mouse_sensitivity * Input.GetAxis("Mouse Y");
+            transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        }
     }
 }

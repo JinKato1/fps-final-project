@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf30c0884053e84d92db29c8fecd223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game: main
 --- !u!114 &485284706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +637,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 485284705}
-        m_MethodName: PlayGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
