@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         if (current_health <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("game-over");
         }
 
         health_bar.value = current_health;

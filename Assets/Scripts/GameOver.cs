@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
-    
+    public Text score_text;
+
     // Start is called before the first frame update
     void Start()
     {
+        score_text.text = "Your Score: " + Player.instance.current_score.ToString();
     }
 
     // Update is called once per frame
@@ -17,15 +19,4 @@ public class Menu : MonoBehaviour
     {
         
     }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene("main");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
 }
