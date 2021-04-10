@@ -6,22 +6,25 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+
+    public static Player instance;
+
     public Transform fire_position;
     public GameObject bullet;
 
     public Slider health_bar;
-    public Text life_text;
+    public Text life_text, score_text;
 
     public int damage = 1;
     public int current_health;
+    public int current_score = 0;
 
     public GameObject pause_screen;
 
-    /*
-        private void Awake()
-        {
-            this_instance = this;
-        }*/
+    private void Awake()
+     {
+            instance = this;
+     }
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,12 @@ public class Player : MonoBehaviour
         }
 
         health_bar.value = current_health;
-        life_text.text = "Life: " + current_health;          
+        life_text.text = "Life: " + current_health;
+    }
+    
+    public void AddPoints(int points)
+    {
+        current_score += points;
+        score_text.text = current_score.ToString();
     }
 }
