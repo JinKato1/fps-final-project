@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject virus;
     public Vector3 position;
     float timer = 0.0f;
-    static public int score = 10;
 
     public GameObject pause_screen;
 

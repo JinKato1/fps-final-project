@@ -47,11 +47,10 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage_amount)
     {
-        print("taken damage");
         current_health = current_health - damage_amount;
 
         if (current_health <= 0)
-        {
+        { 
             SceneManager.LoadScene("game-over");
         }
 
@@ -64,4 +63,5 @@ public class Player : MonoBehaviour
         current_score += points;
         score_text.text = current_score.ToString();
     }
+
 }
