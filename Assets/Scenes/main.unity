@@ -1805,10 +1805,11 @@ AudioSource:
   m_GameObject: {fileID: 1121193188}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3504212943337102136, guid: 4151e231bdfce7d4ca1cd9bd6956b65a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5936fb8ddf4b5754ca0ea731bc3be820, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2164,10 +2165,10 @@ MonoBehaviour:
   health_bar: {fileID: 1886231874}
   life_text: {fileID: 1712335662}
   score_text: {fileID: 736662115}
+  pause_screen: {fileID: 1181479928}
   damage: 1
   current_health: 1
   current_score: 0
-  pause_screen: {fileID: 1181479928}
 --- !u!136 &1188620007
 CapsuleCollider:
   m_ObjectHideFlags: 0

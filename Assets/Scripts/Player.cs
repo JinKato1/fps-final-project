@@ -14,12 +14,11 @@ public class Player : MonoBehaviour
 
     public Slider health_bar;
     public Text life_text, score_text;
+    public GameObject pause_screen;
 
     public int damage = 1;
     public int current_health;
     public int current_score = 0;
-
-    public GameObject pause_screen;
 
     private void Awake()
      {
