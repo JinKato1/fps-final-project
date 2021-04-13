@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     public int current_health;
     public int current_score = 0;
 
+    public AudioSource taking_damage_sfx;
+
     private void Awake()
      {
             instance = this;
@@ -52,11 +54,14 @@ public class Player : MonoBehaviour
         { 
             SceneManager.LoadScene("game-over");
         }
+        //sound effect
+        taking_damage_sfx.PlayOneShot(taking_damage_sfx.clip);
 
         health_bar.value = current_health;
         life_text.text = "Life: " + current_health;
+
     }
-    
+
     public void AddPoints(int points)
     {
         current_score += points;

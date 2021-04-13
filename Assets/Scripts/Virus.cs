@@ -11,6 +11,9 @@ public class Virus : MonoBehaviour
     public int currentHealth = 5;
     public int damage = 1;
 
+    //audio 
+    public AudioSource taking_damage_sfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class Virus : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        //taking_damage_sfx.PlayOneShot(taking_damage_sfx.clip);
         currentHealth = currentHealth - damageAmount;
 
         if (currentHealth <= 0)
