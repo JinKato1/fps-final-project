@@ -38,8 +38,9 @@ public class Virus : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-
-            SFXController.instance.virus_explosion.PlayOneShot(SFXController.instance.virus_explosion.clip);
+            //SFXController.instance.virus_explosion.Play();
+            AudioController.instance.VirusExplosion();
+            //SFXController.instance.virus_explosion.PlayOneShot(SFXController.instance.virus_explosion.clip);
             Instantiate(explosion_effect, transform.position, transform.rotation);
             Destroy(gameObject);
             
