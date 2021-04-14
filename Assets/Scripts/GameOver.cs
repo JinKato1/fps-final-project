@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         score_text.text = "Your Score: " + Player.instance.current_score.ToString();
     }
 

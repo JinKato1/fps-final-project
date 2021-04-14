@@ -332,6 +332,8 @@ MonoBehaviour:
   currentHealth: 5
   damage: 1
   taking_damage_sfx: {fileID: -3220122548430113854}
+  explosion_effect: {fileID: 1855340746554395461, guid: 49011e57640af4346b984abcfb1cf581,
+    type: 3}
 --- !u!54 &-6001096165929315131
 Rigidbody:
   m_ObjectHideFlags: 0

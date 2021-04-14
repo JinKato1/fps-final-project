@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 
     public AudioSource start_sound, quit_sound;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,13 @@ public class Menu : MonoBehaviour
     {
         
     }
-
+/*
+    public void StartClicked2()
+    {
+        SFXController.instance.clicking_sound.PlayOneShot(SFXController.instance.clicking_sound.clip);
+        SceneManager.LoadScene("main");
+    }
+*/
     public void StartClicked()
     {
         start_sound.PlayOneShot(start_sound.clip);

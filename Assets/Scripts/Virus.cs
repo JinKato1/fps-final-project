@@ -14,6 +14,8 @@ public class Virus : MonoBehaviour
     //audio 
     public AudioSource taking_damage_sfx;
 
+    public GameObject explosion_effect;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +33,16 @@ public class Virus : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        //taking_damage_sfx.PlayOneShot(taking_damage_sfx.clip);
+        //taking_damage_sfx.Play(taking_damage_sfx.);
         currentHealth = currentHealth - damageAmount;
 
         if (currentHealth <= 0)
         {
+
+            SFXController.instance.virus_explosion.PlayOneShot(SFXController.instance.virus_explosion.clip);
+            Instantiate(explosion_effect, transform.position, transform.rotation);
             Destroy(gameObject);
+            
         }
     }
 
@@ -56,8 +62,8 @@ public class Virus : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Player>().TakeDamage(damage);
+        
         }
-        Destroy(gameObject);
 
     }
 }
