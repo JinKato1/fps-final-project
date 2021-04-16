@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         //hiding the pause screen
@@ -75,13 +75,16 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+
         pause_screen.SetActive(true);
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
     }
 
     public void Unpause()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         pause_screen.SetActive(false);
         Time.timeScale = 1f;
