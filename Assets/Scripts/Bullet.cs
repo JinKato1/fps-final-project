@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.forward * speed;
+       // rb.velocity = transform.forward * speed;
     }
 
     // Update is called once per frame
@@ -42,6 +42,10 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    public void SetVelocity(Vector3 point)
+    {
+        transform.LookAt(point);
+        rb.velocity = transform.forward * speed;
+    }
 
 }

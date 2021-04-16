@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public static Player instance;
 
     public Transform fire_position;
-    public GameObject bullet;
+    public Bullet bullet;
 
     public Slider health_bar;
     public Text life_text, score_text;
@@ -21,6 +21,13 @@ public class Player : MonoBehaviour
     public int current_score = 0;
 
     public AudioSource taking_damage_sfx;
+
+    public Camera main_cam;
+
+    float x = Screen.width / 2;
+    float y = Screen.height / 2;
+
+    Ray ray;
 
     private void Awake()
      {
@@ -40,7 +47,20 @@ public class Player : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(bullet, fire_position.position, fire_position.rotation);
+                Bullet bullet1 = Instantiate(bullet, fire_position.position, fire_position.rotation);
+                RaycastHit hit;
+
+                ray = main_cam.ScreenPointToRay(new Vector3(x, y, 0));
+                
+                if (Physics.Raycast(ray, out hit, 50))
+                {
+                    bullet1.SetVelocity(hit.point);
+                }
+                else
+                {
+                    bullet1.SetVelocity(fire_position.position + fire_position.forward * 40f);
+                }
+
             }
         }
     }
