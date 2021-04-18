@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class Player : MonoBehaviour
     public Bullet bullet;
 
     public Slider health_bar;
-    public Text life_text, score_text;
-    public GameObject pause_screen;
+    public Text life_text, score_text, game_over_score_text;
+    public GameObject pause_screen, game_over_screen, game_ui;
 
     public int damage = 1;
     public int current_health;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
     float y = Screen.height / 2;
 
     Ray ray;
+
+    public AudioMixer mixer; 
 
     private void Awake()
      {
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pause_screen.activeInHierarchy)
+        if (!pause_screen.activeInHierarchy && !game_over_screen.activeInHierarchy)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -71,8 +74,20 @@ public class Player : MonoBehaviour
         current_health = current_health - damage_amount;
 
         if (current_health <= 0)
-        { 
-            SceneManager.LoadScene("game-over");
+        {
+            //SceneManager.LoadScene("game-over");
+            //this turns off the virus moving audio 
+            AudioController.instance.mixer.SetFloat("Master", -80);
+            AudioController.instance.bgm.Stop();
+            AudioController.instance.game_over_bgm.Play();
+            game_over_screen.SetActive(true);
+            game_over_score_text.text = "Your Score: " + current_score.ToString();
+
+            game_ui.SetActive(false);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+
         }
         //sound effect
         taking_damage_sfx.PlayOneShot(taking_damage_sfx.clip);

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Vector3 position;
     float timer = 0.0f;
 
-    public GameObject pause_screen;
+    public GameObject pause_screen, game_ui, game_over_screen;
 
     //scenes
     public string menu_scene, game_scene;
@@ -18,22 +18,32 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Virus moving audio 
+        AudioController.instance.mixer.SetFloat("Master", 0);
+        
+        game_ui.SetActive(true);
+        pause_screen.SetActive(false);
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         //hiding the pause screen
-        pause_screen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !pause_screen.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Escape) && !pause_screen.activeInHierarchy && !game_over_screen.activeInHierarchy)
         {
             Pause();
         }
 
-        if(timer <= 1f)
+/*        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Unpause();
+        }*/
+
+        if (timer <= 1f)
         {
             timer += Time.deltaTime;
         }

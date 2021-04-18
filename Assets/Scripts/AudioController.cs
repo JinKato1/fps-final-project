@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AudioController : MonoBehaviour
 
     //BGM
     public AudioSource bgm;
+    public AudioSource game_over_bgm;
 
     //SFX Player
     public AudioSource player_shooting, player_taking_damage;
@@ -17,6 +19,9 @@ public class AudioController : MonoBehaviour
 
     //SFX Menu
     public AudioSource menu_start_button, menu_quit_button;
+
+    public AudioMixer mixer;
+
 
     private void Awake()
     {

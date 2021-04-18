@@ -9,7 +9,7 @@ public class CameraManager : MonoBehaviour
 
     public float mouse_sensitivity = 0.01f;
 
-    public GameObject pause_screen;
+    public GameObject pause_screen, game_over_screen;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class CameraManager : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!pause_screen.activeInHierarchy)
+        if (!pause_screen.activeInHierarchy && !game_over_screen.activeInHierarchy)
         {
             yaw += mouse_sensitivity * Input.GetAxis("Mouse X");
             pitch -= mouse_sensitivity * Input.GetAxis("Mouse Y");

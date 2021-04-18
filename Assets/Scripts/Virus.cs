@@ -63,9 +63,10 @@ public class Virus : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Player>().TakeDamage(damage);
-            
+            Destroy(gameObject);
+
         }
-        Destroy(gameObject);
+        
 
     }
 }
