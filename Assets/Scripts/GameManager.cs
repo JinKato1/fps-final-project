@@ -6,14 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject virus;
+    public GameObject virus, green_virus, red_virus;
     public Vector3 position;
     float timer = 0.0f;
+    float spawn_timer = 0.0f;
+    public float spawning_interval;
+    public float spawn_rate;
+    public float red_spawn_rate;
 
     public GameObject pause_screen, game_ui, game_over_screen;
 
     //scenes
     public string menu_scene, game_scene;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,18 +45,32 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-/*        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            Unpause();
-        }*/
+        /*        if (Input.GetKeyDown(KeyCode.F1))
+                {
+                    Unpause();
+                }*/
 
+        //every sencond the spawn_interval is decremented by spawn_rate 
         if (timer <= 1f)
         {
             timer += Time.deltaTime;
+
         }
         else
         {
+            spawning_interval = spawning_interval - spawn_rate;
             timer = 0;
+        }
+
+
+        if (spawn_timer <= spawning_interval)
+        {
+            spawn_timer += Time.deltaTime;
+            
+        }
+        else
+        {
+            spawn_timer = 0;
             SpawnVirus();
         }
 
@@ -58,6 +79,17 @@ public class GameManager : MonoBehaviour
     void SpawnVirus()
     {
         int num = Random.Range(0, 4);
+
+        float ran_num = Random.Range(0f, 1f);
+        if (ran_num < red_spawn_rate)
+        {
+            virus = red_virus;
+        }
+        else
+        {
+            virus = green_virus;
+        }
+  
 
         if (num == 0)
         {

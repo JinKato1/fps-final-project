@@ -53,8 +53,10 @@ public class Player : MonoBehaviour
                 Bullet bullet1 = Instantiate(bullet, fire_position.position, fire_position.rotation);
                 RaycastHit hit;
 
+                x = Screen.width / 2;
+                y = Screen.height / 2;
                 ray = main_cam.ScreenPointToRay(new Vector3(x, y, 0));
-                
+
                 if (Physics.Raycast(ray, out hit, 50))
                 {
                     bullet1.SetVelocity(hit.point);
@@ -63,6 +65,16 @@ public class Player : MonoBehaviour
                 {
                     bullet1.SetVelocity(fire_position.position + fire_position.forward * 40f);
                 }
+
+                /*                if (Physics.Raycast(fire_position.position, fire_position.forward, out hit, 50))
+                                {
+                                    bullet1.SetVelocity(hit.point);
+                                }
+                                else
+                                {
+                                    bullet1.SetVelocity(fire_position.position + fire_position.forward * 40f);
+                                }*/
+
 
             }
         }

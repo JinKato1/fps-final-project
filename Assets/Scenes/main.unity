@@ -281,8 +281,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 334796094}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: StartClicked
         m_Mode: 1
         m_Arguments:
@@ -471,8 +471,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.7534}
+  m_SizeDelta: {x: 10, y: -3.5068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274062901
 MonoBehaviour:
@@ -1326,7 +1326,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virus: {fileID: 2661756142257781597, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
+  green_virus: {fileID: 2661756142257781597, guid: dddeda6d0629a09438dbf97ce84d81fd,
+    type: 3}
+  red_virus: {fileID: 2661756142257781597, guid: 0fad6f3ced93d7c43840eb8de4aba13b,
+    type: 3}
   position: {x: 0, y: 0, z: 0}
+  spawning_interval: 1
+  spawn_rate: 0.01
+  red_spawn_rate: 0.1
   pause_screen: {fileID: 1181479928}
   game_ui: {fileID: 1662152122}
   game_over_screen: {fileID: 149252586}
@@ -1919,6 +1926,7 @@ MonoBehaviour:
   virus_explosion: {fileID: 1397154073}
   menu_start_button: {fileID: 907942568}
   menu_quit_button: {fileID: 1189255691}
+  mixer: {fileID: 24100000, guid: d145ef7ec5c612648aba1716a7f53ac9, type: 2}
 --- !u!4 &810480378
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,8 +2408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_AnchoredPosition: {x: -5, y: -1.7534}
+  m_SizeDelta: {x: -10, y: 3.5068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958079849
 MonoBehaviour:
@@ -2416,7 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3199,7 +3207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1074627277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3217,8 +3225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.4896, y: -23.0232}
-  m_SizeDelta: {x: 174.9792, y: 24.0455}
+  m_AnchoredPosition: {x: 92.4896, y: -24.338612}
+  m_SizeDelta: {x: 174.9792, y: 33.6888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1121193188
 GameObject:
@@ -3514,6 +3522,7 @@ MonoBehaviour:
   health_bar: {fileID: 1886231874}
   life_text: {fileID: 1712335662}
   score_text: {fileID: 736662115}
+  game_over_score_text: {fileID: 1712610189}
   pause_screen: {fileID: 1181479928}
   game_over_screen: {fileID: 149252586}
   game_ui: {fileID: 1662152122}
@@ -3522,6 +3531,7 @@ MonoBehaviour:
   current_score: 0
   taking_damage_sfx: {fileID: 282809009}
   main_cam: {fileID: 963194227}
+  mixer: {fileID: 24100000, guid: d145ef7ec5c612648aba1716a7f53ac9, type: 2}
 --- !u!136 &1188620007
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4750,8 +4760,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 334796094}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: QuitClicked
         m_Mode: 1
         m_Arguments:
