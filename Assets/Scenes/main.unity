@@ -3527,7 +3527,7 @@ MonoBehaviour:
   game_over_screen: {fileID: 149252586}
   game_ui: {fileID: 1662152122}
   damage: 1
-  current_health: 1
+  current_health: 5
   current_score: 0
   taking_damage_sfx: {fileID: 282809009}
   main_cam: {fileID: 963194227}
@@ -4649,9 +4649,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 58757784}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 25
+  m_MaxValue: 5
   m_WholeNumbers: 1
-  m_Value: 25
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -328,8 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 3
   rb: {fileID: -6001096165929315131}
-  currentHealth: 5
-  damage: 5
+  currentHealth: 3
+  damage: 3
   taking_damage_sfx: {fileID: 0}
   explosion_effect: {fileID: 1855340746554395461, guid: 49011e57640af4346b984abcfb1cf581,
     type: 3}

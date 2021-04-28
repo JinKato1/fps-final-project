@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+
         if (Input.GetKeyDown(KeyCode.Escape) && !pause_screen.activeInHierarchy && !game_over_screen.activeInHierarchy)
         {
             Pause();

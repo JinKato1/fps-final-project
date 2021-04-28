@@ -10,7 +10,7 @@ public class Virus : MonoBehaviour
     public Rigidbody rb;
     public int currentHealth = 5;
     public int damage = 1;
-
+    public bool is_stopped = false; 
     //audio 
     public AudioSource taking_damage_sfx;
 
@@ -26,9 +26,12 @@ public class Virus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-/*        transform.LookAt(new Vector3(0.0f, 0.5f, 0f));
-        rb.velocity = transform.forward * move_speed;*/
+/*        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            is_stopped = true;
+        }
+*/
     }
 
     public void TakeDamage(int damageAmount)
