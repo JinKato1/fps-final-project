@@ -821,11 +821,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: {fileID: 0}
+  game_over_bgm: {fileID: 0}
   player_shooting: {fileID: 0}
   player_taking_damage: {fileID: 0}
   virus_explosion: {fileID: 0}
   menu_start_button: {fileID: 0}
   menu_quit_button: {fileID: 0}
+  mixer: {fileID: 0}
 --- !u!4 &657922514
 Transform:
   m_ObjectHideFlags: 0

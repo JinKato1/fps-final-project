@@ -25,9 +25,6 @@ public class Player : MonoBehaviour
 
     public Camera main_cam;
 
-    float x = Screen.width / 2;
-    float y = Screen.height / 2;
-
     Ray ray;
 
     public AudioMixer mixer; 
@@ -53,9 +50,7 @@ public class Player : MonoBehaviour
                 Bullet bullet1 = Instantiate(bullet, fire_position.position, fire_position.rotation);
                 RaycastHit hit;
 
-                x = Screen.width / 2;
-                y = Screen.height / 2;
-                ray = main_cam.ScreenPointToRay(new Vector3(x, y, 0));
+                ray = main_cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
                 if (Physics.Raycast(ray, out hit, 50))
                 {
@@ -65,16 +60,6 @@ public class Player : MonoBehaviour
                 {
                     bullet1.SetVelocity(fire_position.position + fire_position.forward * 40f);
                 }
-
-                /*                if (Physics.Raycast(fire_position.position, fire_position.forward, out hit, 50))
-                                {
-                                    bullet1.SetVelocity(hit.point);
-                                }
-                                else
-                                {
-                                    bullet1.SetVelocity(fire_position.position + fire_position.forward * 40f);
-                                }*/
-
 
             }
         }
@@ -87,7 +72,6 @@ public class Player : MonoBehaviour
 
         if (current_health <= 0)
         {
-            //SceneManager.LoadScene("game-over");
             //this turns off the virus moving audio 
             AudioController.instance.mixer.SetFloat("Master", -80);
             AudioController.instance.bgm.Stop();

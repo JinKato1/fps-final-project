@@ -20,13 +20,7 @@ public class Menu : MonoBehaviour
     {
         
     }
-/*
-    public void StartClicked2()
-    {
-        SFXController.instance.clicking_sound.PlayOneShot(SFXController.instance.clicking_sound.clip);
-        SceneManager.LoadScene("main");
-    }
-*/
+
     public void StartClicked()
     {
         start_sound.PlayOneShot(start_sound.clip);
@@ -44,12 +38,6 @@ public class Menu : MonoBehaviour
         quit_sound.PlayOneShot(quit_sound.clip);
         StartCoroutine(BackToMenu());
     }
-    /*
-        public void QuitGame()
-        {
-            Application.Quit();
-        }*/
-
 
     IEnumerator StartGame()
     {

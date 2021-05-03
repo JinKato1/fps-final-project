@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+
+    //found from Youtube video "Rotae Camera With Mouse in Unity 3D" by Learn Everything Fast
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
@@ -21,6 +23,7 @@ public class CameraManager : MonoBehaviour
     {
         if (!pause_screen.activeInHierarchy && !game_over_screen.activeInHierarchy)
         {
+            //found from Youtube video "Rotae Camera With Mouse in Unity 3D" by Learn Everything Fast
             yaw += mouse_sensitivity * Input.GetAxis("Mouse X");
             pitch -= mouse_sensitivity * Input.GetAxis("Mouse Y");
             transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);

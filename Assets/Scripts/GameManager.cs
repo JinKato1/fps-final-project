@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
-        //hiding the pause screen
     }
 
     // Update is called once per frame
@@ -45,12 +44,6 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-        /*        if (Input.GetKeyDown(KeyCode.F1))
-                {
-                    Unpause();
-                }*/
-
-        //every sencond the spawn_interval is decremented by spawn_rate 
         if (timer <= 1f)
         {
             timer += Time.deltaTime;
@@ -81,6 +74,7 @@ public class GameManager : MonoBehaviour
         int num = Random.Range(0, 4);
 
         float ran_num = Random.Range(0f, 1f);
+
         if (ran_num < red_spawn_rate)
         {
             virus = red_virus;
