@@ -1687,7 +1687,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0020123, y: 26.186882}
-  m_SizeDelta: {x: 545.066, y: 52.3747}
+  m_SizeDelta: {x: 545.066, y: 84.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000061726
 MonoBehaviour:
@@ -1716,15 +1716,14 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Destroy As Many Viruses As You Can! Point and Click!
-
-'
+  m_Text: "Destroy As Many Viruses As You Can! \n\nPoint and Click With Mouse. Press
+    Escape to Pause."
 --- !u!222 &2000061727
 CanvasRenderer:
   m_ObjectHideFlags: 0

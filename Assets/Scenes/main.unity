@@ -4760,9 +4760,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 334796093}
+      - m_Target: {fileID: 334796094}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: QuitClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5006,8 +5006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf30c0884053e84d92db29c8fecd223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start_sound: {fileID: 991668649}
-  quit_sound: {fileID: 1608760152}
+  start_sound: {fileID: 0}
+  quit_sound: {fileID: 0}
 --- !u!114 &2092210765
 MonoBehaviour:
   m_ObjectHideFlags: 0

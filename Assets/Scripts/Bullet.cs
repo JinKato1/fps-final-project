@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 1;
-    public float bullet_duration;
-    public float speed;
 
     public Rigidbody rb;
     public GameObject player;
+
+    public int damage = 1;
+    public float bullet_duration;
+    public float speed;
 
     public Text score_text;
 
